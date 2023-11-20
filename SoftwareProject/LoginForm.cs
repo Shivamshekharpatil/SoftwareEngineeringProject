@@ -42,7 +42,8 @@ namespace SoftwareProject
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Exit Application","Confirm",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            if(MessageBox.Show("Exit Application","Confirm",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes) 
+                //gives user an option of Yes or no before exiting the application
             {
                 Application.Exit();
             }
