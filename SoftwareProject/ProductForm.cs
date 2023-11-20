@@ -47,7 +47,7 @@ namespace SoftwareProject
             formModule.btnUpdate.Enabled = false;
             formModule.ShowDialog();
             LoadProduct();
-        }
+        } 
 
         private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
         { 
