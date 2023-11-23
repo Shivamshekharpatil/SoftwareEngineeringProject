@@ -105,5 +105,10 @@ namespace SoftwareProject
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

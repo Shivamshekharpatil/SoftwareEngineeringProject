@@ -45,7 +45,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboCat = new System.Windows.Forms.ComboBox();
             this.lblPid = new System.Windows.Forms.Label();
-            this.txtEid = new System.Windows.Forms.TextBox();
+            this.pphone = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -190,11 +190,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 73);
+            this.label2.Location = new System.Drawing.Point(21, 75);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 21);
+            this.label2.Size = new System.Drawing.Size(144, 21);
             this.label2.TabIndex = 15;
-            this.label2.Text = "Product Name:";
+            this.label2.Text = "Software Name:";
             // 
             // panel1
             // 
@@ -206,6 +206,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(559, 47);
             this.panel1.TabIndex = 14;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // comboCat
             // 
@@ -228,13 +229,14 @@
             this.lblPid.Text = "Product id";
             this.lblPid.Visible = false;
             // 
-            // txtEid
+            // pphone
             // 
-            this.txtEid.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEid.Location = new System.Drawing.Point(169, 283);
-            this.txtEid.Name = "txtEid";
-            this.txtEid.Size = new System.Drawing.Size(323, 26);
-            this.txtEid.TabIndex = 31;
+            this.pphone.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pphone.Location = new System.Drawing.Point(169, 283);
+            this.pphone.Name = "pphone";
+            this.pphone.Size = new System.Drawing.Size(323, 26);
+            this.pphone.TabIndex = 31;
+            this.pphone.TextChanged += new System.EventHandler(this.txtEid_TextChanged);
             // 
             // label7
             // 
@@ -242,16 +244,17 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(81, 285);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 21);
+            this.label7.Size = new System.Drawing.Size(67, 21);
             this.label7.TabIndex = 30;
-            this.label7.Text = "Email ID:";
+            this.label7.Text = "Phone:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // ProductModuleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 397);
-            this.Controls.Add(this.txtEid);
+            this.Controls.Add(this.pphone);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblPid);
             this.Controls.Add(this.comboCat);
@@ -301,7 +304,7 @@
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.ComboBox comboCat;
         public System.Windows.Forms.Label lblPid;
-        public System.Windows.Forms.TextBox txtEid;
+        public System.Windows.Forms.TextBox pphone;
         private System.Windows.Forms.Label label7;
     }
 }

@@ -28,7 +28,7 @@ namespace SoftwareProject
         {
             int i = 0;
             dgvProduct.Rows.Clear();
-            cm = new SqlCommand("SELECT * FROM tbProduct WHERE CONCAT(pid, pname, psname, pcategory, pdescription,paddress,peID) LIKE '%"+txtSearch.Text+"%'", con);
+            cm = new SqlCommand("SELECT * FROM tbProduct WHERE CONCAT(pid, pname, psname, pcategory, pdescription,pAddress,pphone) LIKE '%"+txtSearch.Text+"%'", con);
             con.Open();
             dr = cm.ExecuteReader();
             while (dr.Read())
@@ -61,7 +61,7 @@ namespace SoftwareProject
                 productModule.comboCat.Text = dgvProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
                 productModule.txtPDes.Text = dgvProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
                 productModule.txtPAdd.Text = dgvProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
-                productModule.txtEid.Text = dgvProduct.Rows[e.RowIndex].Cells[7].Value.ToString();
+                productModule.pphone.Text = dgvProduct.Rows[e.RowIndex].Cells[7].Value.ToString();
 
 
                 productModule.btnSave.Enabled = false;

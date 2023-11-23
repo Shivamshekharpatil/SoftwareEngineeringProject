@@ -152,6 +152,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(323, 26);
             this.txtPhone.TabIndex = 8;
+            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             // 
             // btnSave
             // 

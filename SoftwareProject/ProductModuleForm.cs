@@ -52,13 +52,13 @@ namespace SoftwareProject
             {
                 if (MessageBox.Show("Are you sure want to save this product?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    cm = new SqlCommand("INSERT INTO tbProduct(pname,psname,pcategory,pdescription,pemail,paddress,peID)VALUES(@pname,@psname,@pcategory,@pdescription,@paddress,@peID)", con);
+                    cm = new SqlCommand("INSERT INTO tbProduct(pname,psname,pcategory,pdescription,pAddress,pphone)VALUES(@pname,@psname,@pcategory,@pdescription,@pAddress,@pphone)", con);
                     cm.Parameters.AddWithValue("@pname", txtPName.Text);
                     cm.Parameters.AddWithValue("@psname", txtPComp.Text);
                     cm.Parameters.AddWithValue("@pcategory", comboCat.Text);
                     cm.Parameters.AddWithValue("@pdescription", txtPDes.Text);
-                    cm.Parameters.AddWithValue("@paddress", txtPAdd.Text);
-                    cm.Parameters.AddWithValue("@peID", txtEid.Text);
+                    cm.Parameters.AddWithValue("@pAddress", txtPAdd.Text);
+                    cm.Parameters.AddWithValue("@pphone", pphone.Text);
                     con.Open();
                     cm.ExecuteNonQuery();
                     con.Close();
@@ -80,6 +80,7 @@ namespace SoftwareProject
             txtPComp.Clear();
             txtPAdd.Clear();
             txtPDes.Clear();
+            pphone.Clear();
             comboCat.Text = "";
         }
 
@@ -96,13 +97,13 @@ namespace SoftwareProject
             {
                 if (MessageBox.Show("Are you sure want to update this Product?", "Update Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    cm = new SqlCommand("UPDATE tbProduct SET pname=@pname,psname=@psname,pcategory=@pcategory,pdescription=@pdescription,paddress=@paddress,peID=@peID WHERE pid LIKE '" + lblPid.Text + "' ", con);
+                    cm = new SqlCommand("UPDATE tbProduct SET pname=@pname,psname=@psname,pcategory=@pcategory,pdescription=@pdescription,pAddress=@pAddress,pphone=@pphone WHERE pid LIKE '" + lblPid.Text + "' ", con);
                     cm.Parameters.AddWithValue("@pname", txtPName.Text);
                     cm.Parameters.AddWithValue("@psname", txtPComp.Text);
                     cm.Parameters.AddWithValue("@pcategory", comboCat.Text);
                     cm.Parameters.AddWithValue("@pdescription", txtPDes.Text);
-                    cm.Parameters.AddWithValue("@paddress", txtPAdd.Text);
-                    cm.Parameters.AddWithValue("@peID", txtEid.Text);
+                    cm.Parameters.AddWithValue("@pAddress", txtPAdd.Text);
+                    cm.Parameters.AddWithValue("@pphone", pphone.Text);
                     con.Open();
                     cm.ExecuteNonQuery();
                     con.Close();
@@ -125,6 +126,21 @@ namespace SoftwareProject
         }
 
         private void ProductModuleForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEid_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

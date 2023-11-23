@@ -71,5 +71,15 @@ namespace SoftwareProject
             MainForm main = new MainForm();
             this.Hide(); main.ShowDialog();
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
