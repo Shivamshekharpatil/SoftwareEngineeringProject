@@ -53,6 +53,7 @@ namespace SoftwareProject
         {
             try
             {
+               
                 cm = new SqlCommand("SELECT * FROM tbUser WHERE username=@username AND password=@password", con);
                 cm.Parameters.AddWithValue("@username", textBox1.Text);
                 cm.Parameters.AddWithValue("@password", textBox2.Text);
@@ -63,6 +64,8 @@ namespace SoftwareProject
                 {
                     MessageBox.Show("Welcome " + dr["fullname"].ToString() + " | ", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MainForm main = new MainForm();
+                    if(textBox1.Text != "Admin")
+                        main.btnUsers.Enabled = false;
                     this.Hide();
                     main.ShowDialog();
                 }
