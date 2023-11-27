@@ -16,7 +16,7 @@ namespace SoftwareProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UserForm1());
+            Application.Run(new Loading());
         }
     }
 }
