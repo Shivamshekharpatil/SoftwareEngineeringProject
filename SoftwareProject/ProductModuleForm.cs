@@ -36,7 +36,7 @@ namespace SoftwareProject
             con.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void productModuleFormClose(object sender, EventArgs e)
         {
             this.Dispose();
         }

@@ -85,7 +85,7 @@ namespace SoftwareProject
                 }
                 if (MessageBox.Show("Are you sure want to update this user?", "Update Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    cm = new SqlCommand("UPDATE tbUser SET username=@username,fullname=@fullname,password=@password,phone=@phone WHERE username LIKE '"+txtUserName.Text +"' ", con);
+                    cm = new SqlCommand("UPDATE tbUser SET username=@username,fullname=@fullname,password=@password,phone=@phone WHERE username LIKE '" + txtUserName.Text + "' ", con);
                     cm.Parameters.AddWithValue("@username", txtUserName.Text);
                     cm.Parameters.AddWithValue("@fullname", txtFullName.Text);
                     cm.Parameters.AddWithValue("@password", txtPass.Text);

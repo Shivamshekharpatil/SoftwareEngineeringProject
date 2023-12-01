@@ -67,7 +67,7 @@
             this.button4.TabIndex = 12;
             this.button4.Text = "X";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.productModuleFormClose);
             // 
             // label1
             // 
