@@ -26,7 +26,7 @@ namespace SoftwareProject
         {
             int i = 0;
             dgvCategory.Rows.Clear();
-            cm = new SqlCommand("SELECT * FROM tbCategory", con);
+            cm = new SqlCommand("SELECT * FROM tbCategory WHERE CONCAT(catid, catName) LIKE '%"+txtcatSearch.Text+"%'", con);
             con.Open();
             dr = cm.ExecuteReader();
             while (dr.Read())
@@ -73,6 +73,11 @@ namespace SoftwareProject
                     MessageBox.Show("Record has been successfully deleted!");
                 }
             }
+            LoadCategory();
+        }
+
+        private void txtcatSearch_TextChanged(object sender, EventArgs e)
+        {
             LoadCategory();
         }
     }

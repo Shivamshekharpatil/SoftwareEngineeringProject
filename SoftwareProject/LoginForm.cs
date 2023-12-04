@@ -64,7 +64,7 @@ namespace SoftwareProject
                 {
                     MessageBox.Show("Welcome " + dr["fullname"].ToString() + " | ", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MainForm main = new MainForm();
-                    if(textBox1.Text != "Admin")
+                    if(textBox1.Text != "admin@Citisoft.uk")
                         main.btnUsers.Enabled = false;
                     this.Hide();
                     main.ShowDialog();
