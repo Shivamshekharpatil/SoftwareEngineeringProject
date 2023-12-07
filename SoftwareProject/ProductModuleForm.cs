@@ -11,33 +11,50 @@ using System.Windows.Forms;
 
 namespace SoftwareProject
 {
+    // The ProductModuleForm class represents a form for managing product details.
     public partial class ProductModuleForm : Form
     {
+        // SqlConnection object to connect to the database.
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\patil\OneDrive\Documents\dbMS.mdf;Integrated Security=True;Connect Timeout=30");
+        // SqlCommand object for executing SQL queries.
         SqlCommand cm = new SqlCommand();
+        // SqlDataReader object for reading data from the database.
         SqlDataReader dr;
+
+        // Constructor for the ProductModuleForm.
         public ProductModuleForm()
         {
+            // Initialize the form components and load categories.
             InitializeComponent();
             LoadCategory();
         }
 
+        // Method to load product categories into the ComboBox.
         public void LoadCategory()
         {
+            // Clear existing items in the ComboBox.
             comboCat.Items.Clear();
+
+            // SQL query to select category names from the tbCategory table.
             cm = new SqlCommand("SELECT catname FROM tbCategory", con);
+            // Open the database connection.
             con.Open();
+
+            // Execute the query and read the results.
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
+                // Add category names to the ComboBox.
                 comboCat.Items.Add(dr[0].ToString());
             }
+            // Close the SqlDataReader and the database connection.
             dr.Close();
             con.Close();
         }
-
+        // Event handler for the form's Close event.
         private void productModuleFormClose(object sender, EventArgs e)
         {
+            // Dispose of the form.
             this.Dispose();
         }
 
