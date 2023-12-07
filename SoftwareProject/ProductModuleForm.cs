@@ -67,8 +67,10 @@ namespace SoftwareProject
         {
             try
             {
+                // Check if the user wants to save the product
                 if (MessageBox.Show("Are you sure want to save this product?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    // Create a SQL INSERT command
                     cm = new SqlCommand("INSERT INTO tbProduct(pname,psname,pcategory,pdescription,pAddress,pphone)VALUES(@pname,@psname,@pcategory,@pdescription,@pAddress,@pphone)", con);
                     cm.Parameters.AddWithValue("@pname", txtPName.Text);
                     cm.Parameters.AddWithValue("@psname", txtPComp.Text);
@@ -77,9 +79,12 @@ namespace SoftwareProject
                     cm.Parameters.AddWithValue("@pAddress", txtPAdd.Text);
                     cm.Parameters.AddWithValue("@pphone", pphone.Text);
                     con.Open();
+                    // Execute the INSERT command
                     cm.ExecuteNonQuery();
                     con.Close();
+                    // Display success message
                     MessageBox.Show("Product has been successfully saved.");
+                    // Clear the input fields
                     Clear();
                 }
 
@@ -93,6 +98,7 @@ namespace SoftwareProject
         }
         public void Clear()
         {
+            // Clearing textboxes and controls
             txtPName.Clear();
             txtPComp.Clear();
             txtPAdd.Clear();
@@ -103,6 +109,7 @@ namespace SoftwareProject
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            // Clearing controls and enabling/disabling buttons
             Clear();
             btnSave.Enabled = true;
             btnUpdate.Enabled = false;
@@ -114,6 +121,7 @@ namespace SoftwareProject
             {
                 if (MessageBox.Show("Are you sure want to update this Product?", "Update Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    // Updating product information in the database
                     cm = new SqlCommand("UPDATE tbProduct SET pname=@pname,psname=@psname,pcategory=@pcategory,pdescription=@pdescription,pAddress=@pAddress,pphone=@pphone WHERE pid LIKE '" + lblPid.Text + "' ", con);
                     cm.Parameters.AddWithValue("@pname", txtPName.Text);
                     cm.Parameters.AddWithValue("@psname", txtPComp.Text);
@@ -133,6 +141,7 @@ namespace SoftwareProject
             }
             catch (Exception ex)
             {
+                // Handle and show exceptions during the update process
                 MessageBox.Show(ex.Message);
             }
         }
